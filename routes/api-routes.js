@@ -1,3 +1,4 @@
+const { Workout } = require("../models")
 const db = require("../models")
 
 module.exports = function(app){
@@ -10,7 +11,12 @@ module.exports = function(app){
       res.json(findResponse)
     }) 
 
-    app.post("/api/workouts", async function(req, res){
+    app.post("/api/workouts", function(req, res){
+       db.Workout.create(req.body)
+       .then(({ _id }) => db.Workout.findOneAndUpdate({},{
+         $push: {id: }
+       }))
+       
        
     })
 

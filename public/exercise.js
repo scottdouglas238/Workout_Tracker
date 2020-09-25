@@ -95,7 +95,7 @@ function validateInputs() {
   }
 }
 
-async function handleFormSubmit(event) {
+async function handleFormSubmit(event) {//this is the complete button
   event.preventDefault();
 
   let workoutData = {};
@@ -140,13 +140,13 @@ function clearInputs() {
 if (workoutTypeSelect) {
   workoutTypeSelect.addEventListener("change", handleWorkoutTypeChange);
 }
-if (completeButton) {
+if (completeButton) {//take you back to the main page
   completeButton.addEventListener("click", function (event) {
     shouldNavigateAway = true;
     handleFormSubmit(event);
   });
 }
-if (addButton) {
+if (addButton) {//add an exercise
   addButton.addEventListener("click", handleFormSubmit);
 }
 toast.addEventListener("animationend", handleToastAnimationEnd);
